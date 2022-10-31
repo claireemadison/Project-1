@@ -8,11 +8,11 @@
 #: Options      : None
 
 # Global Constants
-# TOOLS: A list of required tools. Edit as required. Sometoolnotinstalled to
-#        show what a missing tool message looks like.
+# TOOLS: A list of required tools. Edit as required. Sometoolnotinstalled to 
+#        show what a missing tool message looks like. 
 declare -r TOOLS="git python3 pipenv"
 
-# Global Variables
+# Global Variables 
 declare _confirm=1
 
 
@@ -29,7 +29,7 @@ display_usage() {
 	echo
 	echo "-----------------------------------------"
 	echo " Usage: ./`basename $0` [ --help | --checktools | no argument | --install | --runmain | --runtests ] "
-	echo
+	echo 
 	echo " Examples: ./`basename $0` --checktools   		# Show this usage message "
 	echo "           ./`basename $0` --help         		# Check for required tools "
 	echo "           ./`basename $0`                		# Default: -checktools and -help "
@@ -72,7 +72,7 @@ check_doc_comments() {
 process_arguments() {
 	case $1 in
 		--help) # If first argument is '-help' call display_usage
-			display_usage
+			display_usage 
 			;;
 
 		--checktools) # Verify required development tools are installed
@@ -91,11 +91,11 @@ process_arguments() {
 			install
 			;;
 
-		--checkdoccomments) # Run pydocstyle to check doc comments
+		--checkdoccomments)
 			check_doc_comments
 			;;
 
-		*) 	# Otherwise, call default_action with all arguments
+		*) 	# Otherwise, call default_action with all arguments	
 			default_action $@
 	esac
 }
